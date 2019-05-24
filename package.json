@@ -1,0 +1,21 @@
+{
+  "name": "netballstatscraper",
+  "version": "1.0.0",
+  "description": "Scrapes nz netball stats from anz prem website",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JHitchiner/NZNetballAPI.git"
+  },
+  "author": "James Hitchiner",
+  "dependencies": {
+    "express": "latest",
+    "request": "latest",
+    "cheerio": "latest"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JHitchiner/NZNetballAPI/issues"
+  },
+  "homepage": "https://github.com/JHitchiner/NZNetballAPI#readme"
+}
