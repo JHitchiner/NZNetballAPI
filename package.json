@@ -2,7 +2,7 @@
   "name": "netballstatscraper",
   "version": "1.0.0",
   "description": "Scrapes nz netball stats from anz prem website",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JHitchiner/NZNetballAPI.git"
