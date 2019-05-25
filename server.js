@@ -19,22 +19,22 @@ app.get('/scrape', function(req, res){
       var $ = cheerio.load(html);
       var name, height, dob, positions, stats;
       var json = {name : "", height : "", dob : "", positions : "", stats : {
-        rebounds : "",
-        total_penalties : "",
-        goal_attempts : "",
-        deflections : "",
-        rebounds : "",
-        contact_penalties : "",
-        matches_played : "",
-        centre_pass_receives : "",
-        obstruction_penalties : "",
-        minutes_played : "",
-        turnovers : "",
-        goal_percentage : "",
-        pickups : "",
-        intercepts : "",
-        goals : "",
-        feeds : ""
+        Rebounds : "",
+        TotalPenalties_contact_obstruction_ : "",
+        Goalattempts : "",
+        Deflections : "",
+        Rebounds_Off_ : "",
+        Contactpenalties : "",
+        Matchesplayed : "",
+        Centrepassreceives : "",
+        Obstructionpenalties : "",
+        Minutesplayed : "",
+        Turnovers : "",
+        Goalpercentage : "",
+        Pickups : "",
+        Intercepts : "",
+        Goals : "",
+        Feeds : ""
       }}
       // GET NAME
       $('.player-name').filter(function(){
@@ -67,14 +67,13 @@ app.get('/scrape', function(req, res){
       // GET STATISTICS
       $('div[id="stats-season"] table tbody tr').each(function(){
         var data = $(this);
-        var stat_name = data.text().replace(/\s/g,"").replace(/\d/g,"");
+        var stat_name = data.text().replace(/\s/g,"").replace(/\d/g,"").replace(/\(|\)|\+/g,"_");
         var stat_value = data.text().replace(/\s/g,"").replace(/\D/g,"");
-        // ----------------------------------
-        // Figure out how to add this to the json variable
-        // ----------------------------------
+        json.stats[stat_name] = stat_value
         console.log("Stats - Name: " + stat_name);
         console.log("Stats - Value:" + stat_value);
       })
+      console.log(json);
     }
   })
 })
